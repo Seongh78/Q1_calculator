@@ -5,16 +5,16 @@
 // redo를 클릭하면 이후 값으로 되돌린다.
 // undo와 redo는 동작이 가능할때만 활성화 상태가 된다.
 
-var result = document.getElementById('value');
+let result = document.getElementById('value');
 
-var undoButton = document.getElementById('undoButton'),
+let undoButton = document.getElementById('undoButton'),
   addButton = document.getElementById('addButton'),
   subButton = document.getElementById('subButton'),
   redoButton = document.getElementById('redoButton'),
   inputValue = document.getElementById('inputbox');
 
-var calList = new Array();
-var cnt = -1;
+let calList = [];
+let cnt = -1;
 // =====  ===== //
 function onload() {
   undoButton.onclick = handleClick;
@@ -24,11 +24,11 @@ function onload() {
 }
 
 // ===== handlClick ===== //
-function handleClick(event) {
-
+//function handleClick(event) {
+const handleClick = (event) => {
   //계산값 변수 설정
-  var calFir = Number(result.innerHTML);
-  var calSec = Number(inputValue.value);
+  let calFir = Number(result.innerHTML);
+  let calSec = Number(inputValue.value);
 
   switch (event.target.id) {
     // === Undo === //
@@ -75,7 +75,7 @@ function handleClick(event) {
 
   //결과값 세팅
   result.innerHTML = calList[cnt];
-  if(cnt == -1){
+  if(cnt === -1){
     result.innerHTML = 0;
   }
 
@@ -84,12 +84,12 @@ function handleClick(event) {
   inputValue.focus();
 
   //redo, undo 버튼 활성화 유무 체크
-  if(cnt == calList.length-1){
+  if(cnt === calList.length-1){
     redoButton.disabled = 'disabled';
   }else{
     redoButton.disabled = false;
   }
-  if(cnt == -1){
+  if(cnt === -1){
     undoButton.disabled = 'disabled';
   }else{
     undoButton.disabled = false
