@@ -16,7 +16,7 @@ let undoButton = document.getElementById('undoButton'),
 let calList = [];
 let cnt = -1;
 // =====  ===== //
-function onload() {
+const onload = () => {
   undoButton.onclick = handleClick;
   addButton.onclick = handleClick;
   subButton.onclick = handleClick;
