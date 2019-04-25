@@ -24,6 +24,7 @@ const onload = () => {
 }
 
 // ===== handlClick ===== //
+//function
 //function handleClick(event) {
 const handleClick = (event) => {
   //계산값 변수 설정
@@ -75,6 +76,7 @@ const handleClick = (event) => {
 
   //결과값 세팅
   result.innerHTML = calList[cnt];
+
   if(cnt === -1){
     result.innerHTML = 0;
   }
