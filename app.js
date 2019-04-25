@@ -24,7 +24,6 @@ const onload = () => {
 }
 
 // ===== handlClick ===== //
-//function handleClick(event) {
 const handleClick = (event) => {
   //계산값 변수 설정
   let calFir = Number(result.innerHTML);
